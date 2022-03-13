@@ -11,6 +11,8 @@ function App() {
   const [latitude, setLatitude] = React.useState();
   const [longitude, setLongitude] = React.useState();
   const [md, setMD] = React.useState({});
+  const [cf,setCf] = React.useState(true);
+  const [faren,setFaren] = React.useState(0);
 
   let options = {
     enableHighAccuracy: true,
@@ -75,13 +77,19 @@ function App() {
     }
   }, [md.weather]);
 
+  React.useEffect(() => {
+    let f = md.temp*9/5+32;
+    f = f.toFixed(2);
+    setFaren(f);
+  },[md.temp])
+
   return (
     <div className="App" id="app">
       <header>
         <h1>Weather App</h1>
       </header>
       <div className="cont">
-        <h1>{md.temp} °C</h1>
+        {cf ? <h1>{md.temp} <span id="stam" onClick={()=>setCf(!cf)}>°C</span></h1> : <h1>{faren} <span id="stam" onClick={()=>setCf(!cf)}>°F</span></h1> }
         <h2>
           <span>{md.name} </span>
           {md.country}

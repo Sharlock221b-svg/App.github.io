@@ -44,7 +44,7 @@ header h1{
     justify-content: space-around;
     justify-items: space-around;
     flex-wrap: wrap;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .prop span{
@@ -77,4 +77,10 @@ header h1{
     .cont{
         width: 90%;
     }
+}
+
+#stam{
+    display: inline-block;
+    color: blue;
+    cursor: pointer;
 }
