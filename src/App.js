@@ -1,6 +1,11 @@
 import React from "react";
 import "./App.css";
-import drizzle from "./images/drizzle.jpg";
+import drizzle from "./images/drizzling24.webp";
+import clear from "./images/clear.jpg"
+import clouds from "./images/clouds.jpg"
+import rain from "./images/rain.jpg"
+import snow from "./images/snow.jpg"
+import thunderstrom from "./images/thunderstrom.jpg"
 
 function App() {
   const [latitude, setLatitude] = React.useState(27);
@@ -48,19 +53,19 @@ function App() {
         document.body.style.cssText += `background-image:url(${drizzle})`;
         break;
       case "Clouds":
-        document.body.style.cssText += `background-image:url(${drizzle})`;
+        document.body.style.cssText += `background-image:url(${clouds})`;
         break;
       case "Rain":
-        document.body.style.cssText += `background-image:url(${drizzle})`;
+        document.body.style.cssText += `background-image:url(${rain})`;
         break;
       case "Snow":
-        document.body.style.cssText += `background-image:url(${drizzle})`;
+        document.body.style.cssText += `background-image:url(${snow})`;
         break;
       case "Clear":
-        document.body.style.cssText += `background-image:url(${drizzle})`;
+        document.body.style.cssText += `background-image:url(${clear})`;
         break;
       case "Thunderstrom":
-        document.body.style.cssText += `background-image:url(${drizzle})`;
+        document.body.style.cssText += `background-image:url(${thunderstrom})`;
         break;
     }
   }, [md.weather]);
