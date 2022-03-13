@@ -27,7 +27,7 @@ function App() {
   function error(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
   }
-
+  
   React.useEffect(() => {
     navigator.geolocation.getCurrentPosition(success, error, options);
     const api =
@@ -47,7 +47,7 @@ function App() {
           humid: data.main.humidity,
         });
       });
-  });
+  },[latitude,longitude]);
 
   React.useEffect(() => {
     let word = md.weather;
@@ -93,7 +93,7 @@ function App() {
             {md.weather}
           </div>
           <div id="spec">
-            <span>Wind</span>
+            <span>Winds</span>
             <br></br>
             {md.wind}KM
           </div>
