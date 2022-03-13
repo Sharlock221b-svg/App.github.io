@@ -1,0 +1,35 @@
+const sys = {
+  coord: { lon: 75.7826, lat: 26.8698 },
+  weather: [
+    {
+      id: 800,
+      main: "Clear",
+      description: "clear sky",
+      icon: "https://cdn.freecodecamp.org/weather-icons/01d.png",
+    },
+  ],
+  base: "stations",
+  main: {
+    temp: 34.83,
+    feels_like: 33.23,
+    temp_min: 34.83,
+    temp_max: 34.83,
+    pressure: 1013,
+    humidity: 23,
+  },
+  visibility: 7000,
+  wind: { speed: 3.09, deg: 330 },
+  clouds: { all: 0 },
+  dt: 1647162886,
+  sys: {
+    type: 1,
+    id: 9170,
+    country: "IN",
+    sunrise: 1647133737,
+    sunset: 1647176647,
+  },
+  timezone: 19800,
+  id: 8199371,
+  name: "Rambagh",
+  cod: 200,
+};
