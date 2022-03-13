@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
 import drizzle from "./images/drizzling24.webp";
-import clear from "./images/clear.jpg"
-import clouds from "./images/clouds.jpg"
-import rain from "./images/rain.jpg"
-import snow from "./images/snow.jpg"
-import thunderstrom from "./images/thunderstrom.jpg"
+import clear from "./images/clear.jpg";
+import clouds from "./images/clouds.jpg";
+import rain from "./images/rain.jpg";
+import snow from "./images/snow.jpg";
+import thunderstrom from "./images/thunderstrom.jpg";
 
 function App() {
   const [latitude, setLatitude] = React.useState(27);
@@ -40,6 +40,8 @@ function App() {
           name: data.name,
           temp: data.main.temp,
           weather: data.weather[0].main,
+          wind: data.wind.speed,
+          humid: data.main.humidity,
         });
       });
   }, []);
@@ -72,9 +74,33 @@ function App() {
 
   return (
     <div className="App" id="app">
-      <p>
-        {latitude} {longitude}
-      </p>
+      <header>
+        <h1>Weather App</h1>
+      </header>
+      <div className="cont">
+        <h1>{md.temp} C</h1>
+        <h2>
+          <span>{md.name} </span>
+          {md.country}
+        </h2>
+        <div className="prop">
+          <div id="spec">
+            <span>Weather</span>
+            <br></br>
+            {md.weather}
+          </div>
+          <div id="spec">
+            <span>Wind</span>
+            <br></br>
+            {md.wind}KM
+          </div>
+          <span id="spec">
+            <span>Humidity</span>
+            <br></br>
+            {md.humid}%
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
