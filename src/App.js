@@ -8,8 +8,8 @@ import snow from "./images/snow.jpg";
 import thunderstrom from "./images/thunderstrom.jpg";
 
 function App() {
-  const [latitude, setLatitude] = React.useState(27);
-  const [longitude, setLongitude] = React.useState(82);
+  const [latitude, setLatitude] = React.useState();
+  const [longitude, setLongitude] = React.useState();
   const [md, setMD] = React.useState({});
 
   let options = {
@@ -30,9 +30,12 @@ function App() {
 
   React.useEffect(() => {
     navigator.geolocation.getCurrentPosition(success, error, options);
-    fetch(
-      "https://weather-proxy.freecodecamp.rocks/api/current?lat=26.86976&lon=75.7825536"
-    )
+    const api =
+      "https://weather-proxy.freecodecamp.rocks/api/current?lat=" +
+      latitude +
+      "&lon=" +
+      longitude;
+    fetch(api)
       .then((results) => results.json())
       .then((data) => {
         setMD({
@@ -44,7 +47,7 @@ function App() {
           humid: data.main.humidity,
         });
       });
-  }, []);
+  });
 
   React.useEffect(() => {
     let word = md.weather;
@@ -78,7 +81,7 @@ function App() {
         <h1>Weather App</h1>
       </header>
       <div className="cont">
-        <h1>{md.temp} C</h1>
+        <h1>{md.temp} °C</h1>
         <h2>
           <span>{md.name} </span>
           {md.country}

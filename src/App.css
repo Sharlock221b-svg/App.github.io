@@ -7,6 +7,8 @@ body{
     image-rendering: auto;
     height: 100vh;
     width:100%;
+    font-family: 'Fredoka', sans-serif;
+
 }
 .App{
     margin: 0px;
@@ -19,7 +21,8 @@ header h1{
 }
 
 .cont{
-    border: 2px solid blue;
+    border: 2px solid #54b9f3;
+    ;
     margin-left: auto;
     margin-right: auto;
     justify-self: center;
@@ -27,6 +30,8 @@ header h1{
     width: 30%;
     border-radius: 20px;
     padding: 20px;
+    background-color: #54b9f3;
+    color:  black;
 }
 
 .cont span{
@@ -54,4 +59,22 @@ header h1{
 #spec{
     font-size: 18px;
     font-weight: 500;
+}
+
+@media (max-width: 1030px){
+    .cont{
+        width: 50%;
+    }
+}
+
+@media (max-width: 634px){
+    .cont{
+        width: 70%;
+    }
+}
+
+@media (max-width: 468px){
+    .cont{
+        width: 90%;
+    }
 }
